@@ -13,7 +13,11 @@ if (eta < 18) {
 } else if (eta > 65) {
   sconto = '40%';
 } else {
+<<<<<<< Updated upstream
   sconto = 0%;
+=======
+  sconto = '0%';
+>>>>>>> Stashed changes
 }
 
 if (eta < 18) {
