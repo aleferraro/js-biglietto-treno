@@ -1,25 +1,39 @@
-var km = document.getElementById('distace');
 
-var eta = document.getElementById('age');
+var COST_KM = 0.21;
+var SCONTO_GIOVANI = 0.2;
+var SCONTO_OVER = 0.4;
 
-var sconto = '';
+// definisco la variabile che fa riferimento al bottone genera
+var creaBiglietto = document.getElementById('creaBiglietto');
 
-var totale = '';
+// istruisco il bottone genera a reagire al click
+creaBiglietto.addEventListener('click',
+function() {
 
-var prezzo = km * 0.21;
+  // dati inseriti dall'utente
+  var passenger = document.getElementById('name');
+  var distance = document.getElementById('distance');
+  var eta = document.getElementById('age');
 
-if (eta < 18) {
-  sconto = '20%';
-  totale = prezzo - (prezzo * 0.20);
-} else if (eta > 65) {
-  sconto = '40%';
-  totale = prezzo - (prezzo * 0.40);
-} else {
-  sconto = '0%';
+  // calcolo costo biglietto
+  var prezzoBiglietto = COST_KM * parseInt(distance.value);
+
+  if (eta = 'Minorenne') {
+    prezzoBiglietto -= prezzoBiglietto * SCONTO_GIOVANI;
+  } else if (eta = 'Over65') {
+    prezzoBiglietto -= prezzoBiglietto *SCONTO_OVER;
+  } else if (eta = 'Altro') {
+    prezzoBiglietto = prezzoBiglietto;
+  }
+
+  var ticket = document.getElementById('ticket');
+  ticket.style.visibility = 'visible';
+
+  // aggiorno il box 'ticket' con i dati
+  document.getElementById('passengerName').innerHTML = passenger.value;
+  document.getElementById('offer').innerHTML = eta;
+  document.getElementById('coach').innerHTML = parseInt(Math.random()*10);
+  document.getElementById('cp').innerHTML = parseInt(Math.random()+90000);
+  document.getElementById('cost').innerHTML = prezzoBiglietto.toFixed(2) + ' €';
 }
-
-document.getElementById('prezzo_biglietto').innerHTML = prezzo.toFixed(2);
-
-document.getElementById('sconto').innerHTML = sconto;
-
-document.getElementById('totale').innerHTML = totale.toFixed(2);
+);

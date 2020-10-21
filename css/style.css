@@ -48,7 +48,7 @@ input, select {
 table {
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  justify-content: space-around;
 }
 
 tr {
@@ -56,6 +56,10 @@ tr {
   justify-content: space-around;
 }
 
-tr:first-of-type {
+thead > tr:first-of-type {
   font-weight: bold;
+}
+
+#ticket {
+  visibility: hidden;
 }

@@ -23,15 +23,15 @@
             <label class="red" for="age">Fascia d'età</label><br>
             <select id="age" name="age">
               <option value="Minorenne">Minorenne</option>
-              <opti on value="Over 65">Over 65</option>
+              <option value="Over65">Over65</option>
               <option value="Altro">Altro</option>
             </select>
           </div>
         </div>
         <div class="row text-center">
           <div class="col-xs-12">
-            <button class="btn ms_btn" type="submit">Genera</button>
-            <button class="btn ms_btn" type="submit">Annulla</button>
+            <button id="creaBiglietto" class="btn ms_btn" type="submit">Genera</button>
+            <button id="refresh" class="btn ms_btn" type="submit">Annulla</button>
           </div>
         </div>
       </div>
@@ -48,18 +48,22 @@
             </div>
             <div class="col-xs-9">
               <table class="h-200">
-                <tr>
-                  <td>Offerta</td>
-                  <td>Carrozzza</td>
-                  <td>Codice CP</td>
-                  <td>Costo Biglietto</td>
-                </tr>
-                <tr>
-                  <td id="offer"></td>
-                  <td id="coach"></td>
-                  <td id="cp"></td>
-                  <td id="cost"></td>
-                </tr>
+                <thead>
+                  <tr>
+                    <td>Offerta</td>
+                    <td>Carrozzza</td>
+                    <td>Codice CP</td>
+                    <td>Costo Biglietto</td>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td id="offer"></td>
+                    <td id="coach"></td>
+                    <td id="cp"></td>
+                    <td id="cost"></td>
+                  </tr>
+                </tbody>
               </table>
             </div>
           </div>
