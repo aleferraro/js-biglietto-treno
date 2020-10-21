@@ -1,0 +1,61 @@
+.main-bg {
+  background-color: #B91450;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.bg-white {
+  background-color: white;
+}
+
+.bg-grey {
+  background-color: #808080;
+}
+
+.red {
+  color: #B91450;
+}
+
+.white {
+  color: white;
+}
+
+.ms_form {
+  border-radius: 10px;
+  padding: 20px;
+}
+
+.ms_btn {
+  color: #B91450;
+  background-color: #CCCCCC;
+  border: 1px solid #B91450;
+  margin-top: 40px;
+  margin-left: 5px;
+  margin-right: 5px;
+}
+
+input, select {
+  border-radius: 5px;
+  border: 1px solid #B91450;
+}
+
+.h-200 {
+  height: 200px;
+}
+
+table {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+tr {
+  display: flex;
+  justify-content: space-around;
+}
+
+tr:first-of-type {
+  font-weight: bold;
+}

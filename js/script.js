@@ -1,6 +1,6 @@
-var km = prompt("Ciao! Quanti km vuoi percorrere?");
+var km = document.getElementById('distace');
 
-var eta = prompt("Quanti anni hai?");
+var eta = document.getElementById('age');
 
 var sconto = '';
 
@@ -10,10 +10,10 @@ var prezzo = km * 0.21;
 
 if (eta < 18) {
   sconto = '20%';
-  totale = prezzo * 0.80;
+  totale = prezzo - (prezzo * 0.20);
 } else if (eta > 65) {
   sconto = '40%';
-  totale = prezzo * 0.60;
+  totale = prezzo - (prezzo * 0.40);
 } else {
   sconto = '0%';
 }

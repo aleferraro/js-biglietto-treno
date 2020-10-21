@@ -2,14 +2,75 @@
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
-    <title></title>
+    <title>Biglietto Treno</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/style.css">
   </head>
   <body>
-    <h2>I biglietto del treno per il percorso da te selezionato costerà:</h2>
-    <h1>Prezzo: &#128; <span id="prezzo_biglietto"></span></h1>
-    <h1>Sconto: &#128; <span id="sconto"></span></h1>
-    <h1>Totale: &#128; <span id="totale"></span></h1>
+    <div class="main-bg">
+      <h1 class="text-uppercase text-center white">calcola il prezzo del tuo biglietto</h1>
+      <div class="container bg-white ms_form">
+        <div class="row text-center">
+          <div class="col-xs-4">
+            <label class="red" for="name">Nome Cognome</label><br>
+            <input id="name" type="text" name="name" value="">
+          </div>
+          <div class="col-xs-4">
+            <label class="red" for="distance">Km da percorrere</label><br>
+            <input id="distance" type="text" name="distance" value="">
+          </div>
+          <div class="col-xs-4">
+            <label class="red" for="age">Fascia d'età</label><br>
+            <select id="age" name="age">
+              <option value="Minorenne">Minorenne</option>
+              <opti on value="Over 65">Over 65</option>
+              <option value="Altro">Altro</option>
+            </select>
+          </div>
+        </div>
+        <div class="row text-center">
+          <div class="col-xs-12">
+            <button class="btn ms_btn" type="submit">Genera</button>
+            <button class="btn ms_btn" type="submit">Annulla</button>
+          </div>
+        </div>
+      </div>
+      <div id="ticket">
+        <h1 class="text-uppercase text-center white">il tuo biglietto</h1>
+        <div class="container bg-white">
+          <h3 class="text-uppercase">dettaglio passeggeri</h3>
+          <div class="row">
+            <div class="col-xs-3 bg-grey h-200">
+              <h3 class="text-uppercase">
+                nome passeggero
+              </h3>
+              <h3 id="passengerName"></h3>
+            </div>
+            <div class="col-xs-9">
+              <table class="h-200">
+                <tr>
+                  <td>Offerta</td>
+                  <td>Carrozzza</td>
+                  <td>Codice CP</td>
+                  <td>Costo Biglietto</td>
+                </tr>
+                <tr>
+                  <td id="offer"></td>
+                  <td id="coach"></td>
+                  <td id="cp"></td>
+                  <td id="cost"></td>
+                </tr>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- <h1>Prezzo: &#128; <span id="prezzo_biglietto"></span></h1>
+      <h1>Sconto: &#128; <span id="sconto"></span></h1>
+      <h1>Totale: &#128; <span id="totale"></span></h1> -->
 
-    <script src="script.js" charset="utf-8"></script>
+    </div>
+
+    <script src="js/script.js" charset="utf-8"></script>
   </body>
 </html>
