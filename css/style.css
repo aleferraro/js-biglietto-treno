@@ -39,21 +39,23 @@
 input, select {
   border-radius: 5px;
   border: 1px solid #B91450;
+  height: 25px;
 }
 
 .h-200 {
   height: 200px;
 }
 
+h4 {
+  font-weight: bold;
+}
+
 table {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-around;
+  width: 100%;
 }
 
 tr {
-  display: flex;
-  justify-content: space-around;
+  width: calc(100% / 4);
 }
 
 thead > tr:first-of-type {

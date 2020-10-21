@@ -3,6 +3,12 @@ var COST_KM = 0.21;
 var SCONTO_GIOVANI = 0.2;
 var SCONTO_OVER = 0.4;
 
+
+//imposto questi valori per far in modo che al refresh della pagina i campi risultino vuoti
+document.getElementById('distance').value = '';
+document.getElementById('name').value = '';
+document.getElementById('age').value = '';
+
 // definisco la variabile che fa riferimento al bottone genera
 var creaBiglietto = document.getElementById('creaBiglietto');
 
@@ -26,6 +32,8 @@ function() {
     prezzoBiglietto = prezzoBiglietto;
   }
 
+
+  // definisco la variabile ticket e faccio in modo che il box del biglietto diventi visibil eal click del bottone genera
   var ticket = document.getElementById('ticket');
   ticket.style.visibility = 'visible';
 
@@ -33,7 +41,17 @@ function() {
   document.getElementById('passengerName').innerHTML = passenger.value;
   document.getElementById('offer').innerHTML = eta;
   document.getElementById('coach').innerHTML = parseInt(Math.random()*10);
-  document.getElementById('cp').innerHTML = parseInt(Math.random()+90000);
+  document.getElementById('cp').innerHTML = parseInt(Math.random()*10000 + 90000);
   document.getElementById('cost').innerHTML = prezzoBiglietto.toFixed(2) + ' €';
+}
+);
+
+// definisco la variabile che fa riferimento al bottone annulla
+var refresh = document.getElementById('refresh');
+
+// istruisco il bottone annulla a reagire al clik aggiornando la pagina
+refresh.addEventListener('click',
+function refreshPage(){
+    window.location.reload();
 }
 );
