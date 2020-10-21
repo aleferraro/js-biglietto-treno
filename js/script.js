@@ -24,11 +24,13 @@ function() {
   // calcolo costo biglietto
   var prezzoBiglietto = COST_KM * parseInt(distance.value);
 
-  if (eta = 'Minorenne') {
+  eta = eta.value;
+
+  if (eta === "Minorenne") {
     prezzoBiglietto -= prezzoBiglietto * SCONTO_GIOVANI;
-  } else if (eta = 'Over65') {
+  } else if (eta === "Over65") {
     prezzoBiglietto -= prezzoBiglietto *SCONTO_OVER;
-  } else if (eta = 'Altro') {
+  } else if (eta === "Altro") {
     prezzoBiglietto = prezzoBiglietto;
   }
 
@@ -40,7 +42,7 @@ function() {
   // aggiorno il box 'ticket' con i dati
   document.getElementById('passengerName').innerHTML = passenger.value;
   document.getElementById('offer').innerHTML = eta;
-  document.getElementById('coach').innerHTML = parseInt(Math.random()*10);
+  document.getElementById('coach').innerHTML = parseInt(Math.random()*10 + 1);
   document.getElementById('cp').innerHTML = parseInt(Math.random()*10000 + 90000);
   document.getElementById('cost').innerHTML = prezzoBiglietto.toFixed(2) + ' €';
 }
