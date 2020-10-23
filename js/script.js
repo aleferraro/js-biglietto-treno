@@ -7,7 +7,6 @@ var SCONTO_OVER = 0.4;
 //imposto questi valori per far in modo che al refresh della pagina i campi risultino vuoti
 document.getElementById('distance').value = '';
 document.getElementById('name').value = '';
-document.getElementById('age').value = '';
 
 // definisco la variabile che fa riferimento al bottone genera
 var creaBiglietto = document.getElementById('creaBiglietto');
@@ -17,20 +16,19 @@ creaBiglietto.addEventListener('click',
 function() {
 
   // dati inseriti dall'utente
-  var passenger = document.getElementById('name');
-  var distance = document.getElementById('distance');
-  var eta = document.getElementById('age');
+  var passenger = document.getElementById('name').value;
+  var distance = document.getElementById('distance').value;
+  var eta = document.getElementById('age').value;
 
   // calcolo costo biglietto
-  var prezzoBiglietto = COST_KM * parseInt(distance.value);
+  var prezzoBiglietto = COST_KM * parseInt(distance);
 
-  eta = eta.value;
 
   if (eta === "Minorenne") {
     prezzoBiglietto -= prezzoBiglietto * SCONTO_GIOVANI;
   } else if (eta === "Over65") {
     prezzoBiglietto -= prezzoBiglietto *SCONTO_OVER;
-  } else if (eta === "Altro") {
+  } else if (eta === "Standard") {
     prezzoBiglietto = prezzoBiglietto;
   }
 
@@ -40,7 +38,7 @@ function() {
   ticket.style.visibility = 'visible';
 
   // aggiorno il box 'ticket' con i dati
-  document.getElementById('passengerName').innerHTML = passenger.value;
+  document.getElementById('passengerName').innerHTML = passenger;
   document.getElementById('offer').innerHTML = eta;
   document.getElementById('coach').innerHTML = parseInt(Math.random()*10 + 1);
   document.getElementById('cp').innerHTML = parseInt(Math.random()*10000 + 90000);
@@ -53,7 +51,12 @@ var refresh = document.getElementById('refresh');
 
 // istruisco il bottone annulla a reagire al clik aggiornando la pagina
 refresh.addEventListener('click',
-function refreshPage(){
-    window.location.reload();
+function() {
+  document.getElementById('distance').value = '';
+  document.getElementById('name').value = '';
+  document.getElementById('age').value = 'Standard';
+
+  var ticket = document.getElementById('ticket');
+  ticket.style.visibility = 'hidden';
 }
 );
